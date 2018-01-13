@@ -1,0 +1,14 @@
+%h1 Hello, Rails!
+%p
+  %strong Title:
+  = @task.title
+%p
+  %strong descriprion:
+  = @task.text
+%p
+  %strong priority:
+  = @task.text
+%p
+  %strong deadline_date:
+  = @task.text
+= link_to 'Back', tasks_path

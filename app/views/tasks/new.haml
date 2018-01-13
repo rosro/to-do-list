@@ -1,0 +1,29 @@
+= form_with scope: :task, url: tasks_path, local: true do |form|
+  - if @task.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@task.errors.count, "error")
+        prohibited
+        this task from being saved:
+      %ul
+        - @task.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    = form.label :title
+    %br/
+    = form.text_field :title
+  %p
+    = form.label :descriprion
+    %br/
+    = form.text_area :text
+  %p
+    = form.label :priority
+    %br/
+    = form.text_area :integer
+  %p
+    = form.label :deadline_date
+    %br/
+    = form.text_area :string
+  %p
+    = form.submit
+= link_to 'Back', tasks_path
